@@ -53,3 +53,10 @@ VALUES
 (6, 58000000, 'Nintendo R&D4'),
 (7, 53790000, 'Nintendo2'),
 (8, 47520000, 'Nintendo3');
+
+--Query:
+
+SELECT rank, game_profile.game_name, class_profile.developer_name, sales_number from sales_profile
+join game_profile on game_profile.id = sales_profile.rank
+join class_profile on class_profile.developer_name = sales_profile.publisher
+    ORDER BY sales_profile.sales_number DESC;
