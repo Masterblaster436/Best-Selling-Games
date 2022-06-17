@@ -181,11 +181,24 @@ VALUES
 (49, 22540000, 'Game Freak', 'Gameboy Advance'),
 (50, 22200000, 'Nintendo EAD', 'Wii U / Nintendo Switch');
 
--- Query
+-- Query #1
+
+-- Query #1 shows every game in order of sales from greatest to least. It joins sales numbers, game name and platform as well.
 
 SELECT game_profile.ID, game_profile.game_name, class_profile.developer_name, platforms.platform_name, sales_number from sales_profile
 join game_profile on game_profile.ID = sales_profile.ID
 join class_profile on class_profile.developer_name = sales_profile.publisher
 join platforms on platforms.platform_name = sales_profile.platform
     ORDER BY sales_profile.sales_number DESC;
+    
+    
+-- Query #2 
+
+-- Query #2 lists the game developers in alphabetical order so the user can see what company made each game.
+   
+SELECT game_profile.ID, game_profile.game_name, class_profile.developer_name, platforms.platform_name, sales_number from sales_profile
+join game_profile on game_profile.ID = sales_profile.ID
+join class_profile on class_profile.developer_name = sales_profile.publisher
+join platforms on platforms.platform_name = sales_profile.platform
+    ORDER BY class_profile.developer_name ASC;    
 
