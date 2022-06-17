@@ -202,3 +202,12 @@ join class_profile on class_profile.developer_name = sales_profile.publisher
 join platforms on platforms.platform_name = sales_profile.platform
     ORDER BY class_profile.developer_name ASC;    
 
+
+-- Query #3
+
+-- Query #3 Work in progress for arrogation
+
+SELECT ROUND(sales_number), LEN(publisher)
+FROM Sales_profile
+WHERE sales_number >75000000
+
